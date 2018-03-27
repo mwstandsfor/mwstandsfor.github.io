@@ -23,7 +23,10 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/main.scss">
 </head>
+
 <body id="generator-page">
+
+  <div class="texture-wrapper"></div>
 
   <div class="col-12 d-flex flex-row justify-content-center logo-img">
     <img class="img img-fluid img-logo" src="assets/logo.svg">
@@ -34,8 +37,16 @@
 </div>
 
 
-<div class="col-12 fixed-bottom d-flex flex-row justify-content-center mb-3">
-  <h6 id="changeOnMobile" class="mr-3">Press space bar or enter to generate</h6> 
+
+<div class="col-12 fixed-bottom d-flex flex-row justify-content-center mb-3 ">
+
+  <h6 id="changeOnMobile" class="mr-3">Spacebar / Enter to generate</h6> 
+  
+
+  <div class="copied-text-display"><h6 class="inner-text">Copy to Clipboard</h6></div>
+
+  <h6 id="clipboard" class="mr-3 ml-3"><i class="fas fa-clipboard"></i> <a href="#" id="clipboard-string">Copy to Clipboard [press c]</a></h6>
+
   <h6 id="tweet" class="ml-3 tweet-link"><a href="#"><i class="fas fa-retweet"></i> tweet</a></h6>
 </div>
 
@@ -47,6 +58,11 @@
   generateSeperate();
 
 
+  document.addEventListener("keydown", function(event) {
+  console.log(event.which);
+});
+
+
   $('body').keyup(function(e) {
     if(e.keyCode == 32 ){
       generateSeperate();
@@ -54,13 +70,55 @@
     if(e.keyCode == 13 ){
       generateSeperate();
     }
+    if(e.keyCode == 67 ){
+      copyKeystroke();
+    }
   });
 
+
   $('#tweet').on('click', function() {
-    var phrase = $('#nameDisplay').text();
-    var tweetURL = 'https://twitter.com/share?text=@mwstandsfor ' + encodeURIComponent(phrase) ;
+    var nameText = $('#nameDisplay').text();
+    var tweetURL = 'https://twitter.com/share?text=@mwstandsfor ' + encodeURIComponent(nameText) ;
 
     window.open(tweetURL);
+  });
+
+
+  function copyKeystroke() {
+    var nameText = document.getElementById('nameDisplay').innerHTML;
+
+      function listener(e) {
+        e.clipboardData.setData("text/html", nameText);
+        e.clipboardData.setData("text/plain", nameText);
+        e.preventDefault();
+      }
+      document.addEventListener("copy", listener);
+      document.execCommand("copy");
+      document.removeEventListener("copy", listener);
+      // $('.inner-text').text("Copied: " + nameText);
+  }
+
+  $( "#clipboard" ).on({
+    click: function() {
+      var nameText = document.getElementById('nameDisplay').innerHTML;
+
+      function listener(e) {
+        e.clipboardData.setData("text/html", nameText);
+        e.clipboardData.setData("text/plain", nameText);
+        e.preventDefault();
+      }
+      document.addEventListener("copy", listener);
+      document.execCommand("copy");
+      document.removeEventListener("copy", listener);
+
+      $('.inner-text').text("Copied: " + nameText);
+
+    }, mouseenter: function() {
+      $('.inner-text').css({"visibility": "visible", "opacity": "0.8"});
+    }, mouseleave: function() {
+      $('.inner-text').css({"visibility": "hidden", "opacity": "0"});
+      $('.inner-text').text("Copy to Clipboard");
+    }
   });
 
 
@@ -68,11 +126,16 @@
     document.getElementById('changeOnMobile').innerHTML = 'Tap anywhere to generate';
 
     $('#nameGenerator').on('click', generateSeperate ) ;
-  }
 
+
+    docuemtn.getElementById('clipboard-string').innerHTML = 'Copy to Clipboard';
+  }
 
 
 </script>
 
 </body>
 </html>
+
+
+
