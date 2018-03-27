@@ -26,7 +26,7 @@
 
 <body id="generator-page">
 
-  <div class="texture-wrapper"></div>
+  <!-- <div class="texture-wrapper"></div> -->
 
   <div class="col-12 d-flex flex-row justify-content-center logo-img">
     <img class="img img-fluid img-logo" src="assets/logo.svg">
@@ -125,10 +125,10 @@
   if (navigator.userAgent.match(/Mobile/)) {
     document.getElementById('changeOnMobile').innerHTML = 'Tap anywhere to generate';
 
-    $('#nameGenerator').on('click', generateSeperate ) ;
+    // $('#nameGenerator').on('click', generateSeperate ) ;
 
 
-    document.getElementById('clipboard-string').innerHTML = 'Copy to Clipboard';
+    document.getElementById('clipboard').remove();
   }
 
 
