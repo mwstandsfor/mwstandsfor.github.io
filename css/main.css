@@ -124,14 +124,17 @@ a::-moz-selection {  background: #aaa; }
     border-radius: 6px;
     padding: 5px;
     position: absolute;
-    width: 140px;
+	width: 140px;
     z-index: 2;
-    bottom: 150%;
+    bottom: 130%;
     left: 50%;
-    margin-right: -140px;
-    transition: opacity 0.2s;
+    margin-left: 40px;
+    transition: opacity 0.3s;
     opacity: 0;
 }
+
+
+
 
 .inner-text::after {
     content: "";
