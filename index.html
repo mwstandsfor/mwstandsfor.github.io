@@ -26,7 +26,7 @@
 
 <body id="generator-page">
 
-  <!-- <div class="texture-wrapper"></div> -->
+  <div class="texture-wrapper"></div>
 
   <div class="col-12 d-flex flex-row justify-content-center logo-img">
     <img class="img img-fluid img-logo" src="assets/logo.svg">
@@ -56,12 +56,6 @@
 
 <script>
   generateSeperate();
-
-
-  document.addEventListener("keydown", function(event) {
-  console.log(event.which);
-});
-
 
   $('body').keyup(function(e) {
     if(e.keyCode == 32 ){
@@ -95,7 +89,6 @@
       document.addEventListener("copy", listener);
       document.execCommand("copy");
       document.removeEventListener("copy", listener);
-      // $('.inner-text').text("Copied: " + nameText);
   }
 
   $( "#clipboard" ).on({
@@ -124,11 +117,11 @@
 
   if (navigator.userAgent.match(/Mobile/)) {
     document.getElementById('changeOnMobile').innerHTML = 'Tap anywhere to generate';
-
-    $('#nameGenerator').on('click', generateSeperate ) ;
-
-
     document.getElementById('clipboard').remove();
+
+
+    $('body').on('click', generateSeperate ) ;
+
   }
 
 
