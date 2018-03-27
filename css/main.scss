@@ -3,9 +3,12 @@
     display: none; 
 }
 
+html, body {
+	background-color: #111;
+}
 
-h1, h6 {
-	color: rgba(0,0,0,.85);
+
+h1, h6, a {
 	vertical-align: baseline;
 	font-style: normal;
 	-webkit-font-smoothing: antialiased;
@@ -15,61 +18,37 @@ h1, h6 {
 }
 
 h1 {
+	color: #eee;
 	font-family: 'Montserrat', sans-serif;
-	font-weight: 500;
-}
-
-h6, a {
-	font-family: 'Open Sans', serif;
-	font-weight: 400;
-}
-
-a {
-	color: rgba(0,0,0, .6);
-}
-
-
-h1 {
 	font-size: 4em;
 	line-height: 1.2em;
 	font-weight: 700;
-	letter-spacing: -1px;
+	letter-spacing: -0.5px;
 }
 
-h6 {
-	font-size: 12px;
+h6, a {
+	color: #888;
+	font-family: 'Open Sans', serif;
 	font-weight: 400;
+	font-size: 12px;
 	font-style: italic;
-	color: rgba(0,0,0, .6);
 	letter-spacing: 0.3px;
 	line-height: 16px;
 }
 
-
-
-.blur {
-
-	-webkit-transform: scale(1);
-	-moz-transform: scale(1);
-	-o-transform: scale(1);
-	transform: scale(1);
-
-	-webkit-filter: blur(0px);
-	-moz-filter: blur(0px);
-	-o-filter: blur(0px);
-	-ms-filter: blur(0px);
-	filter: blur(0px);
-
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-
-	-webkit-transition:all 0.5s ease-in-out;
-	-moz-transition:all 0.5s ease-in-out;
-	-o-transition:all 0.5s ease-in-out;
-	transition:all 0.5s ease-in-out;
-
+a:hover {
+	color: #eee;
 }
 
+.logo-img {
+	position: absolute;
+	top: 16px;
+}
+
+.img-logo {
+	height: 50px;
+
+}
 
 #nameGenerator {
 	width: 100%;
@@ -85,19 +64,17 @@ h6 {
 
 #nameDisplay {
 	padding: 10% 0;
-	/*font-size: 2.5em;*/
 }
 
 
 .tweet-link a:hover {
-	color: rgba(0,0,0, .85);
+	color: #fff;
 	text-decoration: none;
 }
 
 #nameDisplay:hover {
 	cursor: pointer;
 }
-
 
 
 #generator-page {
@@ -114,13 +91,6 @@ h6 {
 
 }
 
-
-
-/*********************************************************************
-
-Media Queries
-
-*********************************************************************/
 
 @media screen and (max-width: 800px) {
 
@@ -142,29 +112,3 @@ Media Queries
   	h1 { font-size: 5em; }
 }
 
-
-/*******************************************************************
-
-Broser specifics
-
-********************************************************************/
-
-
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-	.img-s-shadow, .img-shadow {
-		display: none;
-	}
-}   
-
-@supports (-ms-accelerator:true) {
-	.img-s-shadow, .img-shadow {
-		display: none;
-	}
-}
-
-@supports (-ms-ime-align: auto) {
-  .img-s-shadow, .img-shadow {
-		display: none;
-	}
-}
