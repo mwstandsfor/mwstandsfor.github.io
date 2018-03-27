@@ -1,4 +1,4 @@
-html, body { background-color: #111; }
+html, body { background-color: #000; }
 
 h1, h6, a {
 	vertical-align: baseline;
@@ -104,9 +104,6 @@ a::-moz-selection {  background: #aaa; }
 	text-align: center;
     text-transform: capitalize;
     hyphens: none;
-    filter: blur(1px);
-    mix-blend-mode: overlay;
-    opacity: 0.9;
 }
 
 
@@ -132,8 +129,6 @@ a::-moz-selection {  background: #aaa; }
     transition: opacity 0.3s;
     opacity: 0;
 }
-
-
 
 
 .inner-text::after {

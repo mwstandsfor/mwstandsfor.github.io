@@ -16,10 +16,10 @@ function genName() {
 
 
 
-// function runningName() {
-// 	genName();
-// 	setInterval(genName, 1000);
-// }
+function runningName() {
+	genName();
+	setInterval(genName, 1000);
+}
 
 
 function setName() {
@@ -29,6 +29,8 @@ function setName() {
 	$('.generatedNameBox').fadeOut(speed, function() {
 		$(this).text(mArray[randomM] + " " + wArray[randomW]);
 	}).fadeIn(speed);
+
+	// $('.generatedNameBox').text(mArray[randomM] + " " + wArray[randomW]);	
 }
 
 
@@ -54,7 +56,6 @@ function generatingName() {
 		$(this).text(mArray[randomM] + " " + wArray[randomW]);
 	}).fadeIn(speed);
 
-	// msf.text(mArray[randomM] + " " + wArray[randomW]);
 }
 
 function generateSeperate() {
@@ -64,12 +65,12 @@ function generateSeperate() {
 	meaning.fadeOut(speed, function() {
 		$(this).text(mArray[randomM] + " " + wArray[randomW]);
 	}).fadeIn(speed);
+
 }
 
-
-// meaning.on('click', function() {
-// 	generateSeperate();
-// });
+meaning.on('click', function() {
+	generateSeperate();
+});
 
 
 var mArray = [
