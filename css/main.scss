@@ -1,12 +1,12 @@
-
 ::-webkit-scrollbar { 
     display: none; 
 }
 
-html, body {
-	background-color: #111;
+html, body { 
+	background-color: rgb(13,13,13); 
+	height: 100vh;
+	width: 100vw;
 }
-
 
 h1, h6, a {
 	vertical-align: baseline;
@@ -18,7 +18,7 @@ h1, h6, a {
 }
 
 h1 {
-	color: #eee;
+	color: #ddd;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 4em;
 	line-height: 1.2em;
@@ -36,41 +36,26 @@ h6, a {
 	line-height: 16px;
 }
 
-a:hover {
-	color: #eee;
-}
+a:hover { color: #eee; }
 
 
-h1::selection {
-  background: #aaa; /* WebKit/Blink Browsers */
-}
-h1::-moz-selection {
-  background: #aaa; /* Gecko Browsers */
-}
+h1::selection { background: #aaa; }
+h1::-moz-selection { background: #aaa; }
 
-h6::selection {
-  background: #aaa; /* WebKit/Blink Browsers */
-}
-h6::-moz-selection {
-  background: #aaa; /* Gecko Browsers */
-}
+h6::selection {  background: #aaa; }
+h6::-moz-selection { background: #aaa; }
 
-a::selection {
-  background: #aaa; /* WebKit/Blink Browsers */
-}
-a::-moz-selection {
-  background: #aaa; /* Gecko Browsers */
-}
-
+a::selection {  background: #aaa; }
+a::-moz-selection {  background: #aaa; }
 
 .logo-img {
 	position: absolute;
-	top: 16px;
+	top: 32px;
 }
 
-.img-logo {
-	height: 50px;
-
+.img-logo { 
+	height: 50px; 
+	opacity: 0.8;
 }
 
 #nameGenerator {
@@ -84,19 +69,33 @@ a::-moz-selection {
 	padding: 16px;
 }
 
-#nameGenerator:after {
+.texture-wrapper {
+	background-image: url("../assets/noise.jpg");
 	content: "";
-	/*grainy image*/
-	background-image: url("/assets/noise.jpg");
+	z-index: 1;
 	/*specify height and width above and beyond the page header for movement*/
-	height: 300%;
-	width: 300%;
-	/*using opcaity in place of a transparent image*/
-	opacity: 0.8;
-	/*need this when the animation kicks in to hold the position of the texture*/
-	position: fixed;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	opacity: 0.3;
+	mix-blend-mode: overlay;
+	overflow: hidden;
 }
 
+
+@keyframes grain {
+	0%, 100% { transform:translate(0, 0) }
+	10% { transform:translate(-5%, -10%) }
+	20% { transform:translate(-15%, 5%) }
+	30% { transform:translate(7%, -25%) }
+	40% { transform:translate(-5%, 25%) }
+	50% { transform:translate(-15%, 10%) }
+	60% { transform:translate(15%, 0%) }
+	70% { transform:translate(0%, 15%) }
+	80% { transform:translate(3%, 35%) }
+	90% { transform:translate(-10%, 10%) }
+}
 
 .tweet-link a:hover {
 	color: #fff;
@@ -109,12 +108,47 @@ a::-moz-selection {
 }
 
 .msf-generator {
+	z-index: 12;
 	text-align: center;
-	font-size: 4em;
-	line-height: 1em;
     text-transform: capitalize;
+    filter: blur(0.6px);
     hyphens: none;
+}
 
+
+.copied-text-display {
+	position: relative;
+	display: inline-block;
+
+}
+
+.inner-text {
+	visibility: hidden;
+	background-color: #333;
+    color: #eee;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+	width: 140px;
+    z-index: 2;
+    bottom: 130%;
+    left: 50%;
+    margin-left: 40px;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+
+.inner-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
 }
 
 
