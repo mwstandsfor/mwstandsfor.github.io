@@ -12,14 +12,16 @@
   </script>
 
   <title>MW Stands For</title>
-  <meta charset="utf-8">
+
 
   <meta property="og:type" content="product">
   <meta property="og:title" content="MW Stands For Generator">
-  <meta property="og:url" content="http://makeword.mwstandsfor.com">
   <meta property="og:image" content="http://www.mwstandsfor.com/og.jpg">
+  <meta property="og:url" content="http://makeword.mwstandsfor.com">
   <meta property="og:description" content="Simple site that generates a possible description for MW">
 
+
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
 
@@ -123,7 +125,18 @@
   if (navigator.userAgent.match(/Mobile/)) {
     document.getElementById('changeOnMobile').innerHTML = 'Tap anywhere to generate';
     document.getElementById('clipboard').remove();
-    $('.texture-wrapper').on('click', generateSeperate ) ;
+    $('.texture-wrapper').on('click', generateSeperate );
+
+
+    $('.msf-generator').css({
+                                'filter': 'blur(0px)',
+                                '-webkit-filter': 'blur(0px)',
+                                '-moz-filter': 'blur(0px)',
+                                '-o-filter': 'blur(0px)',
+                                '-ms-filter': 'blur(0px)'
+              });
+
+
   }
 
   

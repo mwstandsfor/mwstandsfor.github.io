@@ -12,10 +12,6 @@ html, body {
 h1, h6, a {
 	vertical-align: baseline;
 	font-style: normal;
-	-webkit-font-smoothing: antialiased;
-	-moz-font-smoothing: antialiased;
-	-o-font-smoothing: antialiased;
-	font-smoothing: antialiased;
 }
 
 h1 {
@@ -73,6 +69,7 @@ a::-moz-selection {  background: #aaa; }
 
 .texture-wrapper {
 	background-image: url("../assets/noise.jpg");
+	background-size: 20%;
 	content: "";
 	z-index: 1;
 	position: fixed;
@@ -81,7 +78,7 @@ a::-moz-selection {  background: #aaa; }
 	width: 100%;
 	left: 0;
 	top: 0;
-	opacity: 0.3;
+	opacity: 0.4;
 	mix-blend-mode: overlay;
 	overflow: hidden;
 }
@@ -114,7 +111,11 @@ a::-moz-selection {  background: #aaa; }
 	z-index: 12;
 	text-align: center;
     text-transform: capitalize;
-    filter: blur(0.6px);
+    filter: blur(0.7px);
+    -webkit-filter: blur(0.7px);
+	-moz-filter: blur(0.7px);
+	-o-filter: blur(0.7px);
+	-ms-filter: blur(0.7px);
     hyphens: none;
 }
 
