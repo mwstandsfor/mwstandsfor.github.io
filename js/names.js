@@ -16,10 +16,10 @@ function genName() {
 
 
 
-function runningName() {
-	genName();
-	setInterval(genName, 1000);
-}
+// function runningName() {
+// 	genName();
+// 	setInterval(genName, 1000);
+// }
 
 
 function setName() {
@@ -67,9 +67,9 @@ function generateSeperate() {
 }
 
 
-meaning.on('click', function() {
-	generateSeperate();
-});
+// meaning.on('click', function() {
+// 	generateSeperate();
+// });
 
 
 var mArray = [

@@ -17,6 +17,9 @@ h1, h6, a {
 	font-smoothing: antialiased;
 }
 
+
+
+
 h1 {
 	color: #eee;
 	font-family: 'Montserrat', sans-serif;
@@ -40,6 +43,29 @@ a:hover {
 	color: #eee;
 }
 
+
+h1::selection {
+  background: #aaa; /* WebKit/Blink Browsers */
+}
+h1::-moz-selection {
+  background: #aaa; /* Gecko Browsers */
+}
+
+h6::selection {
+  background: #aaa; /* WebKit/Blink Browsers */
+}
+h6::-moz-selection {
+  background: #aaa; /* Gecko Browsers */
+}
+
+a::selection {
+  background: #aaa; /* WebKit/Blink Browsers */
+}
+a::-moz-selection {
+  background: #aaa; /* Gecko Browsers */
+}
+
+
 .logo-img {
 	position: absolute;
 	top: 16px;
@@ -62,9 +88,9 @@ a:hover {
 }
 
 
-#nameDisplay {
+/*#nameDisplay {
 	padding: 10% 0;
-}
+}*/
 
 
 .tweet-link a:hover {
@@ -72,9 +98,9 @@ a:hover {
 	text-decoration: none;
 }
 
-#nameDisplay:hover {
+/*#nameDisplay:hover {
 	cursor: pointer;
-}
+}*/
 
 
 #generator-page {
