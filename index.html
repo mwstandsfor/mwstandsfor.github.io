@@ -37,7 +37,6 @@
 </div>
 
 
-
 <div class="col-12 fixed-bottom d-flex flex-row justify-content-center mb-3 ">
 
   <h6 id="changeOnMobile" class="mr-3">Spacebar / Enter to generate</h6> 
@@ -120,7 +119,8 @@
     document.getElementById('clipboard').remove();
 
 
-    $('body').on('click', generateSeperate ) ;
+    $('.texture-wrapper').on('click', generateSeperate() ) ;
+
 
   }
 
